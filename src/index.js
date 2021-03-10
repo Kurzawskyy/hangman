@@ -1,4 +1,4 @@
 import './styles/main.scss';
+import { Keyboard } from './components/keyboard';
 
-console.log('connected');
-
+new Keyboard();
