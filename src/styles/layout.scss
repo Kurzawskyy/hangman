@@ -1,0 +1,52 @@
+.main-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // To rozwiązanie nie centruje idealnie contentu na telefonach kiedy przeglądarka dokłada swoje dodatowe bary
+    // height: 100vh;
+
+    // fix na powyższe
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: $black;
+    color: $white;
+}
+
+.main-inner-wrapper {
+    width: 900px;
+}
+
+.sentence-display {
+    font-size: 48px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+}
+
+.panel-wrapper {
+    display: flex;
+}
+
+.panel-column {
+    width: 50%;
+    height: 285px;
+
+    &.is-centered {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &.is-grid {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+// Tradycyjny css - selektor, który styluje element, który ma dokładnie takie dwie klasy
+// .panel-column.is-centred {
+    
+// }
