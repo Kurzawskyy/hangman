@@ -1,7 +1,8 @@
 export class Keyboard {
-    constructor() {
+    constructor(showLetterInDisplay) {
         this.keyboardWrapper = document.getElementById("keyboard-wrapper");
         this.createKeyboard();
+        this.showLetterInDisplay = showLetterInDisplay;
     }
 
     createKeyboard() {
@@ -18,6 +19,10 @@ export class Keyboard {
         const button = document.createElement("button");
         button.innerText = letter;
         button.classList.add('keyboard-button');
+
+        button.addEventListener('click', () => {
+            this.showLetterInDisplay(letter);
+        })
         
         buttonWrapper.appendChild(button);
         this.keyboardWrapper.appendChild(buttonWrapper);

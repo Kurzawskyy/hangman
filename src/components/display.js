@@ -1,11 +1,20 @@
 export class Display {
-    constructor(baseSentence) {
+    constructor() {
         this.sentenceDisplay = document.getElementById("sentence-display");
-        this.baseSentence = baseSentence;
-        this.sentenceDisplay.innerText = this.hideCharacters();
+        this.baseSentence = 'JESTEM NORBERT';
+        this.currentSentence = this.hideCharacters(this.baseSentence);
+        this.renderDisplayContent(this.currentSentence);
     }
 
-    hideCharacters() {
-        return this.baseSentence.split('').map((letter) => letter === ' ' ? letter : '-').join('');
+    hideCharacters(sentence) {
+        return sentence.split('').map((letter) => letter === ' ' ? letter : '-').join('');
+    }
+
+    renderDisplayContent(sentence) {
+        this.sentenceDisplay.innerText = sentence;
+    }
+
+    showLetter(chosenLetter) {
+        console.log(chosenLetter);
     }
 }
