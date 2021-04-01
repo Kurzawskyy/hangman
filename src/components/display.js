@@ -1,5 +1,7 @@
 export class Display {
     constructor() {
+        this.showLetter = this.showLetter.bind(this);
+
         this.sentenceDisplay = document.getElementById("sentence-display");
         this.baseSentence = 'JESTEM NORBERT';
         this.currentSentence = this.hideLetters(this.baseSentence);
@@ -15,6 +17,20 @@ export class Display {
     }
 
     showLetter(chosenLetter) {
-        console.log(chosenLetter);
+        const foundLetter = this.baseSentence.split('').find((letter) => letter === chosenLetter);
+        // console.log(!!foundLetter); => stara metoda zamieniania wartości na boolean
+        const isMatch = Boolean(foundLetter);
+        if(isMatch) {
+            // E
+            // ['J', 'E', 'S', 'T', 'E']
+            // ['-', '-', '-', '-', '-'] => ['-', 'E', '-', '-', 'E']
+            const newSentence = this.currentSentence.split('').map((letter, index) => {
+                const baseSentenceLetter = this.baseSentence.charAt(index);
+                return baseSentenceLetter === chosenLetter ? chosenLetter : letter;
+            }).join('');
+            this.currentSentence = newSentence;
+            this.renderDisplayContent(this.currentSentence);
+        }
+        return isMatch;
     }
 }

@@ -21,7 +21,14 @@ export class Keyboard {
         button.classList.add('keyboard-button');
 
         button.addEventListener('click', () => {
-            this.showLetterInDisplay(letter);
+            const hasUserMatch = this.showLetterInDisplay(letter);
+            console.log(hasUserMatch);
+            button.disabled = true;
+            if(hasUserMatch) {
+                button.classList.add("has-match");
+            } else {
+                button.classList.add("has-no-match");
+            }
         })
         
         buttonWrapper.appendChild(button);
