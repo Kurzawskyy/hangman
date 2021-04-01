@@ -1,8 +1,9 @@
 export class Keyboard {
-    constructor(showLetterInDisplay) {
+    constructor(showLetterInDisplay, changeImgSrcInPicture) {
         this.keyboardWrapper = document.getElementById("keyboard-wrapper");
         this.createKeyboard();
         this.showLetterInDisplay = showLetterInDisplay;
+        this.changeImgSrcInPicture = changeImgSrcInPicture;
     }
 
     createKeyboard() {
@@ -22,12 +23,12 @@ export class Keyboard {
 
         button.addEventListener('click', () => {
             const hasUserMatch = this.showLetterInDisplay(letter);
-            console.log(hasUserMatch);
             button.disabled = true;
             if(hasUserMatch) {
                 button.classList.add("has-match");
             } else {
                 button.classList.add("has-no-match");
+                this.changeImgSrcInPicture();
             }
         })
         
