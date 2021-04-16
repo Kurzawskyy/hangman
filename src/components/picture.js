@@ -1,3 +1,6 @@
+import { FAIL } from "../consts/main";
+import { GameOver } from "./game-over";
+
 export class Picture {
     constructor() {
         this.changeImgSrc = this.changeImgSrc.bind(this);
@@ -9,12 +12,8 @@ export class Picture {
         this.counter = this.counter + 1;
         if(this.counter < 10) {
             this.img.src = `img/s${this.counter}.jpg`;
-        }        
+        } else {
+            new GameOver(FAIL);
+        }    
     }
 }
-
-
-
-
-// zd
-// jakie zagrożenia niesie ++ i czym się różni od this.counter + 1

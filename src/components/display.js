@@ -1,9 +1,12 @@
+import { SUCCESS } from "../consts/main";
+import { GameOver } from "./game-over";
+
 export class Display {
     constructor() {
         this.showLetter = this.showLetter.bind(this);
 
         this.sentenceDisplay = document.getElementById("sentence-display");
-        this.baseSentence = 'JESTEM NORBERT';
+        this.baseSentence = 'ABC';
         this.currentSentence = this.hideLetters(this.baseSentence);
         this.renderDisplayContent(this.currentSentence);
     }
@@ -30,6 +33,11 @@ export class Display {
             }).join('');
             this.currentSentence = newSentence;
             this.renderDisplayContent(this.currentSentence);
+
+            const hasUserWon = !this.currentSentence.split('').some((letter) => letter === '-');
+            if(hasUserWon) {
+                new GameOver(SUCCESS);
+            }
         }
         return isMatch;
     }

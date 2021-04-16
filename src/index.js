@@ -7,3 +7,10 @@ const display = new Display();
 const picture = new Picture();
 new Keyboard(display.showLetter, picture.changeImgSrc);
 
+
+// TODO
+// game over (fail and win)
+// reset
+// mechanizm na małe i duże litery, przecinki
+// dodanie dźwięku
+// podłączyć się pod api

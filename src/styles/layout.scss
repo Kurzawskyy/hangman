@@ -44,6 +44,10 @@
         display: flex;
         flex-wrap: wrap;
     }
+
+    &.is-invisible {
+        display: none;
+    }  
 }
 
 // Tradycyjny css - selektor, który styluje element, który ma dokładnie takie dwie klasy
