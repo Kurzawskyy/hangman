@@ -21,26 +21,10 @@ export class GameOver {
     }
 
     generateFailContent() {
-        // this.gameOverWrapper.innerHTML = 'fail';
-        // this.createResetButton();
-        // this.createCloseButton();
         this.generateContent();
     }
 
     generateSuccessContent() {
-        /*
-        stwórz div na ps {
-            p że wygrał
-            p czy jeszcze raz
-        }
-
-        stwórz div na btns {
-            btn tak = replay
-            btn nie = close
-        }
-
-        */
-
         this.generateContent();
     }
 
@@ -73,7 +57,8 @@ export class GameOver {
         this.buttonWrapper = buttonWrapper;
 
         this.createResetButton();
-        this.createCloseButton();     
+        this.createCloseButton();  
+        console.log(this.sentenceDisplay);
     }
 
     createResetButton() {
@@ -99,8 +84,8 @@ export class GameOver {
 
 // zd
 // pseudo kod -> czytać
-// tworzenie restartbutton ma być osobną metodą plus podłączyć do sukcesu i porażki
-// utworzyć elementy za pomocą js i ostylować je (przegrana i wygrana)
+// tworzenie restartbutton ma być osobną metodą plus podłączyć do sukcesu i porażki // DONE
+// utworzyć elementy za pomocą js i ostylować je (przegrana i wygrana) // DONE
 // mechanizm resetowania gry => opcjonalne do zrobienia
 // api
 

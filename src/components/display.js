@@ -37,6 +37,7 @@ export class Display {
             const hasUserWon = !this.currentSentence.split('').some((letter) => letter === '-');
             if(hasUserWon) {
                 new GameOver(SUCCESS);
+                this.sentenceDisplay.classList.add("colored-green");
             }
         }
         return isMatch;

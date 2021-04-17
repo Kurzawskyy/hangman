@@ -6,6 +6,8 @@ export class Picture {
         this.changeImgSrc = this.changeImgSrc.bind(this);
         this.counter = 0;
         this.img = document.getElementById("picture");
+        this.sentenceDisplay = document.getElementById("sentence-display");
+        this.sentenceDisplay.classList.add("sentence-display");
     }
 
     changeImgSrc() {
@@ -14,6 +16,7 @@ export class Picture {
             this.img.src = `img/s${this.counter}.jpg`;
         } else {
             new GameOver(FAIL);
+            this.sentenceDisplay.classList.add("colored-red");
         }    
     }
 }

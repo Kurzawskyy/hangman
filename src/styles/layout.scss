@@ -24,6 +24,14 @@
     text-align: center;
     text-transform: uppercase;
     margin-bottom: 50px;
+
+    &.colored-green {
+        color: $green-light;
+    }
+
+    &.colored-red {
+        color: $red-light;
+    }
 }
 
 .panel-wrapper {
