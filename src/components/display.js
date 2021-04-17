@@ -6,7 +6,7 @@ export class Display {
         this.showLetter = this.showLetter.bind(this);
 
         this.sentenceDisplay = document.getElementById("sentence-display");
-        this.baseSentence = 'ABC';
+        this.baseSentence = 'AS';
         this.currentSentence = this.hideLetters(this.baseSentence);
         this.renderDisplayContent(this.currentSentence);
     }

@@ -1,3 +1,66 @@
 .game-over-wrapper {
-    background-color: red;
+    background-color: $black;
+}
+
+.paragraph-wrapper {
+    text-align: center;
+}
+
+.paragraph {
+    font-size: 25px;
+    color: $white;
+    width: 100%;
+    padding: 10px;
+
+    &.colored-green {
+        color: $green-light;
+        font-size: 35px;
+        padding-bottom: 20px;
+    }
+
+    &.colored-red {
+        color: $red-light;
+        font-size: 35px;
+        padding-bottom: 20px;
+    }
+}
+
+.button-wrapper {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    margin: auto;
+    margin-top: 10%;
+}
+
+.reset-button {
+    background-color: transparent;
+    border: 2px solid $gray;
+    color: $white;
+    font-size: 25px;
+    border-radius: 8px;
+    padding: 10px;
+    outline: none;
+    transition: color 0.5s ease, border-color 0.5s ease;
+}
+
+.reset-button:hover {
+    color: $green-light;
+    border-color: $green-light;
+}
+
+.close-button {
+    background-color: transparent;
+    border: 2px solid $gray;
+    color: $white;
+    font-size: 25px;
+    border-radius: 8px;
+    padding: 10px;
+    outline: none;
+    transition: color 0.5s ease, border-color 0.5s ease;
+}
+
+.close-button:hover {
+    color: $red-light;
+    border-color: $red-light;
 }
