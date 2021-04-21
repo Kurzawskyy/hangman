@@ -4,6 +4,8 @@ export class Keyboard {
         this.createKeyboard();
         this.showLetterInDisplay = showLetterInDisplay;
         this.changeImgSrcInPicture = changeImgSrcInPicture;
+        this.yesSound = new Audio('sound/yes.wav');
+        this.noSound = new Audio('sound/no.wav');
     }
 
     createKeyboard() {
@@ -26,8 +28,10 @@ export class Keyboard {
             button.disabled = true;
             if(hasUserMatch) {
                 button.classList.add("has-match");
+                this.yesSound.play();
             } else {
                 button.classList.add("has-no-match");
+                this.noSound.play();
                 this.changeImgSrcInPicture();
             }
         })

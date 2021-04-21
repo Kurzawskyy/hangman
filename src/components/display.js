@@ -4,7 +4,7 @@ import { GameOver } from "./game-over";
 export class Display {
     constructor() {
         this.showLetter = this.showLetter.bind(this);
-
+        console.log('display');
         this.sentenceDisplay = document.getElementById("sentence-display");
         this.baseSentence = 'AS';
         this.currentSentence = this.hideLetters(this.baseSentence);
