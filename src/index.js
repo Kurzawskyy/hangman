@@ -1,4 +1,10 @@
 import './styles/main.scss';
-import { Keyboard } from './components/keyboard';
+import { startGame } from './helpers/reset-game';
 
-new Keyboard();
+startGame();
+
+
+// TODO
+// mechanizm na małe i duże litery, przecinki
+// po fail hasło pokazuje się
+// podłączyć się pod api

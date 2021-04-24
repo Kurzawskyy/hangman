@@ -1,7 +1,11 @@
 export class Keyboard {
-    constructor() {
+    constructor(showLetterInDisplay, changeImgSrcInPicture) {
         this.keyboardWrapper = document.getElementById("keyboard-wrapper");
         this.createKeyboard();
+        this.showLetterInDisplay = showLetterInDisplay;
+        this.changeImgSrcInPicture = changeImgSrcInPicture;
+        this.yesSound = new Audio('sound/yes.wav');
+        this.noSound = new Audio('sound/no.wav');
     }
 
     createKeyboard() {
@@ -18,6 +22,19 @@ export class Keyboard {
         const button = document.createElement("button");
         button.innerText = letter;
         button.classList.add('keyboard-button');
+
+        button.addEventListener('click', () => {
+            const hasUserMatch = this.showLetterInDisplay(letter);
+            button.disabled = true;
+            if(hasUserMatch) {
+                button.classList.add("has-match");
+                this.yesSound.play();
+            } else {
+                button.classList.add("has-no-match");
+                this.noSound.play();
+                this.changeImgSrcInPicture();
+            }
+        })
         
         buttonWrapper.appendChild(button);
         this.keyboardWrapper.appendChild(buttonWrapper);
