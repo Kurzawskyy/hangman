@@ -38,8 +38,7 @@ export class GameOver {
         this.gameOverWrapper.appendChild(buttonWrapper)
         this.buttonWrapper = buttonWrapper;
 
-        this.createResetButton();
-        this.createCloseButton();  
+        this.createResetButton();  
     }
 
     createResetButton() {
@@ -50,16 +49,6 @@ export class GameOver {
         restartButton.innerText = 'Restart';
         restartButton.classList.add("reset-button");
         this.buttonWrapper.appendChild(restartButton);
-    }
-
-    createCloseButton() {
-        const closeButton = document.createElement("button");
-        closeButton.addEventListener('click', () => {
-            
-        })
-        closeButton.innerText = 'Close';
-        closeButton.classList.add("close-button");
-        this.buttonWrapper.appendChild(closeButton);
     }
 
     resetGame() {
